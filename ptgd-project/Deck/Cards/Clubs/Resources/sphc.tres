@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="club_card_template" load_steps=2 format=3 uid="uid://cppqrv6jacx0w"]
+
+[ext_resource type="Script" uid="uid://n4sotv3sihir" path="res://Deck/Cards/Clubs/Resources/club-card.gd" id="1_341dy"]
+
+[resource]
+script = ExtResource("1_341dy")
+distance = 0
+standard = 0
+type = 0
+name = ""
+metadata/_custom_type_script = "uid://n4sotv3sihir"
