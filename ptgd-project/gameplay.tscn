@@ -3,13 +3,22 @@
 [ext_resource type="Script" uid="uid://w48i6s2quf85" path="res://gameControl.gd" id="1_oe8ih"]
 [ext_resource type="PackedScene" uid="uid://33nvj25cag8s" path="res://Deck/deck.tscn" id="2_oe8ih"]
 
-[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("deckRef")]
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("drawPile")]
 script = ExtResource("1_oe8ih")
-deckRef = NodePath("deck")
+drawPile = NodePath("DrawPile")
 
 [node name="View" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
 zoom = Vector2(4, 4)
 
-[node name="deck" parent="." instance=ExtResource("2_oe8ih")]
+[node name="DrawPile" parent="." instance=ExtResource("2_oe8ih")]
+position = Vector2(590, 360)
+
+[node name="CoursePile" parent="." instance=ExtResource("2_oe8ih")]
 position = Vector2(640, 360)
+type = 1
+
+[node name="DiscardPile" parent="." instance=ExtResource("2_oe8ih")]
+position = Vector2(690, 360)
+type = 2
+interactable = false

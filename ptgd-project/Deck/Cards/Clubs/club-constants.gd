@@ -1,4 +1,4 @@
 class_name Club
 
 enum Standard { Amateur, Advanced, Professional, Special }
-enum Type { putter, pitcher, iron, driver }
+enum Type { Putter, Pitcher, Iron, Driver, HC, HIO }

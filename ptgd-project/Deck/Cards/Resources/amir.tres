@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="club_card_template" load_steps=3 format=3 uid="uid://bscoscthettn2"]
+
+[ext_resource type="Script" uid="uid://n4sotv3sihir" path="res://Deck/Cards/Clubs/club-card.gd" id="1_wl1uy"]
+[ext_resource type="Texture2D" uid="uid://duk3epupt0bwm" path="res://Deck/Cards/Clubs/Textures/AM IRON.png" id="2_cmhnm"]
+
+[resource]
+script = ExtResource("1_wl1uy")
+distance = 5
+standard = 0
+type = 2
+name = "Amateur Iron"
+sprite = ExtResource("2_cmhnm")
+metadata/_custom_type_script = "uid://n4sotv3sihir"
