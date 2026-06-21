@@ -39,6 +39,9 @@ static var coursePileDB = {
 	"ccp5d28": 1
 }
 
+static func getCardData(cardType: String):
+	return load("res://Deck/Cards/Resources/" + cardType + ".tres")
+
 # Function for getting starting card totals for a given deck
 static func getDB(pileType: Type):
 	match pileType:

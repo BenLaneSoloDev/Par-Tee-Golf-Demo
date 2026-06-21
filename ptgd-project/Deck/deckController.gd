@@ -4,6 +4,7 @@ extends Node
 
 @export var type: Deck.Type
 @export var interactable: bool = true
+@export var faceUp: bool = false
 
 @onready var cardDB: Dictionary = Deck.getDB(type)
 var cards: Array[String] = []
@@ -26,14 +27,22 @@ func shuffleDeck():
 func drawTopCard():
 	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
 	
-	var cardType = cards.pop_front()
+	var cardType = cards.pop_back()
 	var card = cardObj.instantiate()
 	card.setup(str(cardType).to_lower(), sprite.position) # TODO update this to have image of the back
 	add_child(card) # TODO Have this added to a scene or node in the game (not the deck)	
 
+	updateSprite()
+
+func updateSprite():
+	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
+	var topCard = Deck.getCardData(cards[cards.size()-1])
+	sprite.texture = topCard.spriteBack # WARNING MIGHT BREAK DUE TO HARD REFERENCE
+
 func _ready() -> void:
 	generateDeck()
 	shuffleDeck()
+	updateSprite()
 
 # TODO Add a way to move and drag around the cards (and separate from decks completely)
 func _input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
