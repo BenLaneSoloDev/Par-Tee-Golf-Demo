@@ -11,16 +11,17 @@ var cardObj: PackedScene = preload("res://Deck/Cards/card.tscn")
 
 # Takes the data needed to make a given pile and the pile reference, and creates the deck
 func generateDeck():
-	# INFO Generate Clubs + ParTee Cards 
-	# INFO (together as they have higher than 1 per type)
 	for key in cardDB.keys():
 		for i in range(cardDB[key]):
 			cards.append(key)
-			
-	# INFO Generate Courses
 
 func shuffleDeck():
-	cards[0] # TODO NEED SHUFFLE CODE
+	for i in range(cards.size()):
+		var j = randi_range(0, cards.size()-1)
+		var tmpCard = cards[i]
+		cards[i] = cards[j] 
+		cards[j] = tmpCard
+	print(cards)
 
 func drawTopCard():
 	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
@@ -32,7 +33,9 @@ func drawTopCard():
 
 func _ready() -> void:
 	generateDeck()
+	shuffleDeck()
 
+# TODO Add a way to move and drag around the cards (and separate from decks completely)
 func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click") && interactable:
 		print("Draw Card")
