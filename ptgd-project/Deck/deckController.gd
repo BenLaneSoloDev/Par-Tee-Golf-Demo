@@ -44,3 +44,9 @@ func _ready() -> void:
 func _input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click") && interactable:
 		drawTopCard()
+
+func _hovered() -> void:
+	GameTweens.cardHover($Sprite)
+	
+func _unhovered() -> void:
+	GameTweens.cardUnhover($Sprite)
