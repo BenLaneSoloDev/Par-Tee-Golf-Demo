@@ -22,7 +22,6 @@ func shuffleDeck():
 		var tmpCard = cards[i]
 		cards[i] = cards[j] 
 		cards[j] = tmpCard
-	print(cards)
 
 func drawTopCard():
 	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
