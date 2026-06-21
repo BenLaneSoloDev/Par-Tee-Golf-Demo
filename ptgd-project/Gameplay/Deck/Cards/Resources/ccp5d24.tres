@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="course_card_template" load_steps=3 format=3 uid="uid://cmjtldmw3gv00"]
+
+[ext_resource type="Script" uid="uid://cghk3i7vvsqxu" path="res://Gameplay/Deck/Cards/Course Cards/course-card.gd" id="1_nqlyx"]
+[ext_resource type="Texture2D" uid="uid://cokvegnvvjbh6" path="res://Gameplay/Deck/Cards/Course Cards/Textures/CCP5D24.png" id="2_it0sq"]
+
+[resource]
+script = ExtResource("1_nqlyx")
+distance = 24
+par = 5
+name = "Hole 14"
+sprite = ExtResource("2_it0sq")
+metadata/_custom_type_script = "uid://cghk3i7vvsqxu"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="course_card_template" load_steps=3 format=3 uid="uid://btgdjoebmhdi2"]
+
+[ext_resource type="Script" uid="uid://cghk3i7vvsqxu" path="res://Gameplay/Deck/Cards/Course Cards/course-card.gd" id="1_nqlyx"]
+[ext_resource type="Texture2D" uid="uid://bciqpfjeacy6n" path="res://Gameplay/Deck/Cards/Course Cards/Textures/CCP5D28.png" id="2_w313x"]
+
+[resource]
+script = ExtResource("1_nqlyx")
+distance = 28
+par = 5
+name = "Hole 18"
+sprite = ExtResource("2_w313x")
+metadata/_custom_type_script = "uid://cghk3i7vvsqxu"

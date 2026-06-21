@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="partee_card_template" load_steps=3 format=3 uid="uid://cs32n28m32xq0"]
+
+[ext_resource type="Script" uid="uid://4efsm5yaempw" path="res://Gameplay/Deck/Cards/ParTeeCards/partee-card.gd" id="1_u8v5a"]
+[ext_resource type="Texture2D" uid="uid://2xg2uw4los5a" path="res://Gameplay/Deck/Cards/ParTeeCards/Textures/CaddieAssist.png" id="2_eskvl"]
+
+[resource]
+script = ExtResource("1_u8v5a")
+type = 0
+name = "Caddie Assist"
+sprite = ExtResource("2_eskvl")
+metadata/_custom_type_script = "uid://4efsm5yaempw"

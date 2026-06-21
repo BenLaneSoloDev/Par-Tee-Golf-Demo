@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="club_card_template" load_steps=3 format=3 uid="uid://b8kiqsnjoyuij"]
+
+[ext_resource type="Script" uid="uid://n4sotv3sihir" path="res://Gameplay/Deck/Cards/Clubs/club-card.gd" id="1_l5omc"]
+[ext_resource type="Texture2D" uid="uid://cax651odna7ww" path="res://Gameplay/Deck/Cards/Clubs/Textures/PR DRIVER.png" id="2_vbsi7"]
+
+[resource]
+script = ExtResource("1_l5omc")
+distance = 12
+standard = 2
+type = 3
+name = "Professional Driver"
+sprite = ExtResource("2_vbsi7")
+metadata/_custom_type_script = "uid://n4sotv3sihir"

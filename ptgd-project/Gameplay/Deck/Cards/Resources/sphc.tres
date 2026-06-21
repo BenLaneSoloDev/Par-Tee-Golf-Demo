@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="club_card_template" load_steps=3 format=3 uid="uid://cppqrv6jacx0w"]
+
+[ext_resource type="Script" uid="uid://n4sotv3sihir" path="res://Gameplay/Deck/Cards/Clubs/club-card.gd" id="1_341dy"]
+[ext_resource type="Texture2D" uid="uid://cmitihq540hnt" path="res://Gameplay/Deck/Cards/Clubs/Textures/SP Handicap.png" id="2_qxtlb"]
+
+[resource]
+script = ExtResource("1_341dy")
+distance = 0
+standard = 3
+type = 4
+name = "Special Handicap"
+sprite = ExtResource("2_qxtlb")
+metadata/_custom_type_script = "uid://n4sotv3sihir"
