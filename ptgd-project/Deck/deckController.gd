@@ -1,14 +1,15 @@
 extends Node
 
-@onready var sprite: TextureRect = $Sprite
+class_name DeckNode
 
 @export var type: Deck.Type
 @export var interactable: bool = true
 @export var faceUp: bool = false
 
+@onready var sprite: TextureRect = $Sprite
 @onready var cardDB: Dictionary = Deck.getDB(type)
 var cards: Array[String] = []
-var cardObj: PackedScene = preload("res://Deck/Cards/card.tscn")
+signal sgnl_drawCard(cardType: String, cardPos: Vector2)
 
 # Takes the data needed to make a given pile and the pile reference, and creates the deck
 func generateDeck():
@@ -25,12 +26,8 @@ func shuffleDeck():
 
 func drawTopCard():
 	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
-	
 	var cardType = cards.pop_back()
-	var card = cardObj.instantiate()
-	card.setup(str(cardType).to_lower(), sprite.position) # TODO update this to have image of the back
-	add_child(card) # TODO Have this added to a scene or node in the game (not the deck)	
-
+	sgnl_drawCard.emit(cardType, sprite.global_position) # SEND SIGNAL OF CARD DRAWN
 	updateSprite()
 
 func updateSprite():
@@ -46,5 +43,4 @@ func _ready() -> void:
 # TODO Add a way to move and drag around the cards (and separate from decks completely)
 func _input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click") && interactable:
-		print("Draw Card")
 		drawTopCard()
