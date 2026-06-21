@@ -1,6 +1,6 @@
 extends Node
 
-@onready var sprite: TextureRect = $TextureRect
+@onready var sprite: TextureRect = $Sprite
 
 @export var type: Deck.Type
 @export var interactable: bool = true
@@ -36,7 +36,7 @@ func _ready() -> void:
 	shuffleDeck()
 
 # TODO Add a way to move and drag around the cards (and separate from decks completely)
-func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click") && interactable:
 		print("Draw Card")
 		drawTopCard()
