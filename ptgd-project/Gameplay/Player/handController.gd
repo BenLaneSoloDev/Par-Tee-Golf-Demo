@@ -27,13 +27,11 @@ func adjustHand():
 # INFO | Auto arranges cards around moved one
 func hasCardMovedPosition(index: int):
 	
-	print("INDEX: " + str(index))
 	var originalPos = cardPositions[index]
 	var currentPos = get_children()[index].position.x
 
 	if currentPos > originalPos + cardPadding or currentPos < originalPos - cardPadding:
 		# INFO CARD HAS SWAPPED PLACE
-		print("SWAP HAPPENS")
 		var direction = sign(currentPos - (originalPos + cardPadding))
 		var swapIndex = int(index + direction)
 		

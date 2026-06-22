@@ -28,17 +28,17 @@ func moveCard(delta: float):
 			global_position = lerp(global_position, get_global_mouse_position(), 22.0 * delta)
 			sprite.z_index = 100
 			is_dragging = true
+			sprite.modulate.a = 0.75
 			handRef.cardBeingDragged = self
 			handRef.hasCardMovedPosition(get_index())
 		else:
 			is_dragging = false
 			if handRef.cardBeingDragged == self:
+				sprite.modulate.a = 1
 				handRef.cardBeingDragged = null
 				handRef.resetCardPosition(get_index())
 				sprite.z_index = 0
 		return
-	
-	sprite.z_index = 0
 
 func _mouse_entered() -> void:
 	mouse_in = true
