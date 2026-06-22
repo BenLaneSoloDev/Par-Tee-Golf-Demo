@@ -17,11 +17,10 @@ func _ready() -> void:
 	for child in playerNode.get_children():
 		if child is PlayerNode:
 			players.append(child)
-			
 	linkDeckInteraction()
 
 # INFO | Gives Player The Card
 func linkDeckInteraction():
-	drawPile.sgnl_drawCard.connect(players[activePlayer].addCardToHand)
-	coursePile.sgnl_drawCard.connect(players[activePlayer].addCardToHand)
-	discardPile.sgnl_drawCard.connect(players[activePlayer].addCardToHand)
+	drawPile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
+	coursePile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
+	discardPile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)

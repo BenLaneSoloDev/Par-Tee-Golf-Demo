@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhkxvfnvl5et"]
 
-[ext_resource type="Script" uid="uid://w48i6s2quf85" path="res://Gameplay/gameControl.gd" id="1_2duv6"]
+[ext_resource type="Script" uid="uid://w48i6s2quf85" path="res://Gameplay/gameController.gd" id="1_2duv6"]
 [ext_resource type="Script" uid="uid://cne515dpy8srd" path="res://Gameplay/state-machine.gd" id="2_g7yrj"]
-[ext_resource type="Script" uid="uid://baojb7p2vm14d" path="res://Gameplay/GameStates/setup-state.gd" id="3_c4nfj"]
+[ext_resource type="Script" uid="uid://baojb7p2vm14d" path="res://Gameplay/GameStates/game-setup-state.gd" id="3_c4nfj"]
 [ext_resource type="PackedScene" uid="uid://33nvj25cag8s" path="res://Gameplay/Deck/deck.tscn" id="4_evi6s"]
 [ext_resource type="PackedScene" uid="uid://c873em7j722b1" path="res://Gameplay/Player/player.tscn" id="5_g7yrj"]
 

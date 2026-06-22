@@ -1,6 +1,5 @@
+class_name GameSetupState
 extends State
-
-class_name SetupState
 
 # TODO
 # 1. Players Get Dealt 5 Cards each

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://du80sm64laryj"]
 
-[ext_resource type="Script" uid="uid://cpokllw6806pn" path="res://Gameplay/Deck/Cards/cardInit.gd" id="1_xkojn"]
+[ext_resource type="Script" uid="uid://cpokllw6806pn" path="res://Gameplay/Deck/Cards/cardController.gd" id="1_xkojn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3i2hq"]
 size = Vector2(40, 56)
@@ -28,5 +28,5 @@ expand_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_3i2hq")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_hovered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_unhovered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_mouse_exited"]
