@@ -9,6 +9,7 @@ var cardPositions: Array[float] = []
 var cardPadding: float = 20.0
 
 var cardBeingDragged: CardNode
+var cardUnderMouse: CardNode
 
 # INFO | Ran when hand size changes to center it with gaps
 func adjustHand():
@@ -60,3 +61,7 @@ func addCard(cardType: String):
 # TODO | Allow Targetted Cards to be Removed from the Hand
 func removeCard():
 	adjustHand()
+
+# INFO | Used to constantly know which node is under mouse (used for z-index based input)
+func _physics_process(delta: float) -> void:
+	pass
