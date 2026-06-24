@@ -61,7 +61,3 @@ func addCard(cardType: String):
 # TODO | Allow Targetted Cards to be Removed from the Hand
 func removeCard():
 	adjustHand()
-
-# INFO | Used to constantly know which node is under mouse (used for z-index based input)
-func _physics_process(delta: float) -> void:
-	pass

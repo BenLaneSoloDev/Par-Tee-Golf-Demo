@@ -45,3 +45,20 @@ position = Vector2(640, 360)
 
 [node name="Player 1" parent="ThePlayers" instance=ExtResource("5_g7yrj")]
 position = Vector2(0, 90)
+playerName = "Harrison"
+handColor = Color(1, 0.280587, 0.411983, 1)
+
+[node name="Player 2" parent="ThePlayers" instance=ExtResource("5_g7yrj")]
+position = Vector2(0, 90)
+playerName = "Ben"
+handColor = Color(0.229294, 0.738668, 1, 1)
+
+[node name="Player 3" parent="ThePlayers" instance=ExtResource("5_g7yrj")]
+position = Vector2(0, 90)
+playerName = "Natalie"
+handColor = Color(0.434276, 0.873468, 0, 1)
+
+[node name="Player 4" parent="ThePlayers" instance=ExtResource("5_g7yrj")]
+position = Vector2(0, 90)
+playerName = "Russell"
+handColor = Color(1, 0.567546, 0.22257, 1)

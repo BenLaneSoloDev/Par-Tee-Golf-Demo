@@ -19,12 +19,46 @@ func _ready() -> void:
 	# Grabs reference to as many players as given in the game
 	# TODO | Can eventually have UI add the amount of players wanted prior
 	for child in playerNode.get_children():
-		if child is PlayerNode:
+		if child is PlayerNode:	
 			players.append(child)
+			child.isActive(false)
+	setActivePlayer(activePlayer) # Gives Deck Interaction to player
+
+# INFO | Temp function for changing through players
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("p"):
+		print("CHANGING FROM: " + str(activePlayer))
+		setActivePlayer(cycleActivePlayer())
+		print("TO: " + str(activePlayer))
+
+# INFO | Increments ActivePlayer through the player list
+func cycleActivePlayer():
+	var nextActivePlayer = activePlayer + 1
+	if nextActivePlayer >= players.size(): nextActivePlayer = 0
+	return nextActivePlayer
+
+# INFO | Change Active Player to Given Index
+func setActivePlayer(index: int):
+	# RESET ORIGINAL
+	breakDeckInteraction()
+	players[activePlayer].isActive(false)
+	
+	# CHANGE PLAYER
+	activePlayer = index
+	
+	# SETUP NEW
+	players[activePlayer].isActive(true)
 	linkDeckInteraction()
 
 # INFO | Gives Player The Card
 func linkDeckInteraction():
-	drawPile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
-	coursePile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
-	discardPile.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
+	var decks: Array[DeckNode] = [drawPile, coursePile, discardPile]
+	for deck in decks:
+		deck.sgnl_drawCard.connect(players[activePlayer].givePlayerCard)
+
+# INFO | Removes Ability for Players to take Cards
+func breakDeckInteraction():
+	var decks: Array[DeckNode] = [drawPile, coursePile, discardPile]
+	for deck in decks:
+		if deck.sgnl_drawCard.is_connected(players[activePlayer].givePlayerCard):
+			deck.sgnl_drawCard.disconnect(players[activePlayer].givePlayerCard)
