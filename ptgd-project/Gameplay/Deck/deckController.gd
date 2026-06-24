@@ -7,7 +7,9 @@ extends Node
 
 @onready var sprite: TextureRect = $Sprite
 @onready var cardDB: Dictionary = Deck.getDB(type)
+
 var cards: Array[String] = []
+var created: bool = false
 signal sgnl_drawCard(cardType: String)
 
 # Takes the data needed to make a given pile and the pile reference, and creates the deck
@@ -26,8 +28,8 @@ func shuffleDeck():
 func drawTopCard():
 	if cards.size() <= 0: return # DONT PROCEDE IF DECK EMPTY
 	var cardType = cards.pop_back()
-	sgnl_drawCard.emit(cardType) # SEND SIGNAL OF CARD DRAWN
 	updateSprite()
+	return cardType
 
 func updateSprite():
 	if cards.size() <= 0: 
@@ -40,11 +42,12 @@ func _ready() -> void:
 	generateDeck()
 	shuffleDeck()
 	updateSprite()
+	created = true
 
 # TODO Add a way to move and drag around the cards (and separate from decks completely)
 func _input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_just_pressed("click") && interactable:
-		drawTopCard()
+		sgnl_drawCard.emit(drawTopCard()) # SEND SIGNAL OF CARD DRAWN 
 
 func _hovered() -> void:
 	GameTweens.cardHover($Sprite)

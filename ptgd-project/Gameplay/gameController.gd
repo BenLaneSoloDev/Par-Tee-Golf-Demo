@@ -31,9 +31,7 @@ func _ready() -> void:
 # INFO | Temp function for changing through players
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("p"):
-		print("CHANGING FROM: " + str(activePlayer))
 		setActivePlayer(cycleActivePlayer())
-		print("TO: " + str(activePlayer))
 
 # INFO | Increments ActivePlayer through the player list
 func cycleActivePlayer():
