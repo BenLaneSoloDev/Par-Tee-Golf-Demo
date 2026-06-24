@@ -13,6 +13,34 @@ coursePile = NodePath("Decks/CoursePile")
 discardPile = NodePath("Decks/DiscardPile")
 playerNode = NodePath("ThePlayers")
 
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="UI" type="MarginContainer" parent="Canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="PlayerDetails" type="VBoxContainer" parent="Canvas/UI"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Index" type="Label" parent="Canvas/UI/PlayerDetails"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Player 1"
+
+[node name="Name" type="Label" parent="Canvas/UI/PlayerDetails"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Harrison"
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_g7yrj")
 initial_state = NodePath("SetupState")

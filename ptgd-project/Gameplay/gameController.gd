@@ -1,6 +1,10 @@
 class_name GameNode
 extends Node2D
 
+# UI References
+@onready var playerIndexLabel: Label =  $"Canvas/UI/PlayerDetails/Index"
+@onready var playerNameLabel: Label =  $"Canvas/UI/PlayerDetails/Name"
+
 # Pile References
 @export var drawPile: DeckNode
 @export var coursePile: DeckNode
@@ -49,6 +53,10 @@ func setActivePlayer(index: int):
 	# SETUP NEW
 	players[activePlayer].isActive(true)
 	linkDeckInteraction()
+	
+	# Update UI
+	playerIndexLabel.text = "Player " + str(activePlayer + 1)
+	playerNameLabel.text = players[activePlayer].playerName
 
 # INFO | Gives Player The Card
 func linkDeckInteraction():
